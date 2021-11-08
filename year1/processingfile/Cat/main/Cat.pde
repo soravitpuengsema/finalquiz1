@@ -34,12 +34,15 @@ class Cat{
     body.setUserData(this);
     //fd.setUserData("Cat");
   }
+  
+  
   void run(){
-    move = new Vec2(mouseX,mouseY);
+    move.set(mouseX,mouseY);
     location.set(move);
     display();
     println(mouseX,mouseY);
   }
+  
   
   void upSize(){
     r+=1;
@@ -49,10 +52,12 @@ class Cat{
     }
   }
   
+  
   void applyForce(Vec2 force){
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force,pos);
   }
+  
   
   void update(){
     //acceleration.add(new Vec2(random(-width,width),0));
@@ -60,7 +65,6 @@ class Cat{
     //location.add(velocity);
   }
   
-
   
   void display(){
     Vec2 pos = box2d.getBodyPixelCoord(body);
@@ -78,5 +82,4 @@ class Cat{
     //ellipse(r-25,0,r*2,r*2);
     popMatrix();
   }
- 
 }

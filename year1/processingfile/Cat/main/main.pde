@@ -18,6 +18,7 @@ Boundary wall_R;
 Vec2 wind;
 int count = 0;
 
+
 void setup(){
   size(920,1280);
   box2d = new Box2DProcessing(this);
@@ -28,9 +29,10 @@ void setup(){
   foods = new ArrayList<Food>();
   floor = new Boundary(width/2,height+100,width,height);// x,y,w,h location and size
   wall_L = new Boundary(0,0,10,height*2);
-  wall_R = new Boundary(width,0,10,height*2);
-  
+  wall_R = new Boundary(width,0,10,height*2); 
 }
+
+
 void draw(){
   wind = new Vec2(random(-10*2,10*2),0);
   // winddddddddddddddddddd Vec2 move = new Vec2(random(-300*2,300*2),random(15*5,30*5));
@@ -58,18 +60,20 @@ void draw(){
       it.remove();
     }
   }
-  
 }
+
 
 void spawnfood(){
   f = new Food();
   foods.add(f);
 }
 
+
 void mousePressed(){
   f = new Food();
   foods.add(f);
 }
+
 
 void beginContact(Contact cp){
   Fixture f1 = cp.getFixtureA();
@@ -92,9 +96,11 @@ void beginContact(Contact cp){
   }
 }
 
+
 void endContact(Contact cp){
   
 }
+
 
 void removeContact(Contact cp){
 

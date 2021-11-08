@@ -40,10 +40,13 @@ class Food{
     body.setUserData(this);
     //fd.setUserData("Food");
   }
+  
+  
   void run(){
     update();
     display();
   }
+  
   
   void update(){
     velocity.add(acceleration);
@@ -55,10 +58,10 @@ class Food{
     }
   }
   
+  
   void display(){
     Vec2 pos = box2d.getBodyPixelCoord(body);
-    float a = body.getAngle();
-    
+    float a = body.getAngle();  
     rectMode(CENTER);
     pushMatrix();
     translate(pos.x,pos.y);
@@ -70,10 +73,12 @@ class Food{
     popMatrix();
   }
   
+  
   void applyForce(Vec2 force){
     Vec2 pos = body.getWorldCenter();
     body.applyForce(force,pos);
   }
+  
   
   boolean isExpired(){
     if(lifespan <= 10.0){
@@ -84,14 +89,13 @@ class Food{
     }
   }
 
+
   void killBody(){
     lifespan = 0;
     try{
       box2d.world.destroyBody(body);
     }
-    catch(AssertionError e){
-      
+    catch(AssertionError e){      
     }
-
   }
 }

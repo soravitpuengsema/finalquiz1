@@ -22,6 +22,7 @@ class Boundary{
     b.createFixture(ps,1);
     b.setUserData(this);
   }
+ 
   
   void display(){
     fill(0);
