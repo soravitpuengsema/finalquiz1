@@ -42,9 +42,8 @@ void draw(){
   wall_R.display();
   
   cat.run();
+  //spawnfood();
   // windddddddddddddddddddd cat.applyForce(move);
-  f = new Food();
-  foods.add(f);
   Iterator<Food> it = foods.iterator();
   while (it.hasNext()) {
     Food f = it.next();
@@ -60,6 +59,11 @@ void draw(){
     }
   }
   
+}
+
+void spawnfood(){
+  f = new Food();
+  foods.add(f);
 }
 
 void mousePressed(){

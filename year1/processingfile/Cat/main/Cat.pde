@@ -35,8 +35,10 @@ class Cat{
     //fd.setUserData("Cat");
   }
   void run(){
-    location.add(move);
+    move = new Vec2(mouseX,mouseY);
+    location.set(move);
     display();
+    println(mouseX,mouseY);
   }
   
   void upSize(){
