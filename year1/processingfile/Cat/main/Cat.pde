@@ -1,4 +1,5 @@
 class Cat{
+  BodyDef bd = new BodyDef();
   Body body;
   Vec2 location;
   //Vec2 velocity;
@@ -9,12 +10,12 @@ class Cat{
   
   Cat(){
     r = 10*2;
-    BodyDef bd = new BodyDef();
+    //BodyDef bd = new BodyDef();
     bd.type = BodyType.DYNAMIC;
-    location = bd.position.set(box2d.coordPixelsToWorld(random(width),random(height-(300*2),height/2)));
+    location = bd.position.set(box2d.coordPixelsToWorld(mouseX,mouseY));
     //velocity = new Vec2(100,0);
     //acceleration = new Vec2(0,0);
-    move = new Vec2(random(-100,100),0);
+    move = new Vec2(mouseX,mouseY);
     body = box2d.createBody(bd);
     
     CircleShape cat_head = new CircleShape();
@@ -34,7 +35,7 @@ class Cat{
     //fd.setUserData("Cat");
   }
   void run(){
-    //update();
+    location.add(move);
     display();
   }
   
@@ -51,11 +52,11 @@ class Cat{
     body.applyForce(force,pos);
   }
   
-  //void update(){
-  //  acceleration.add(new Vec2(random(-width,width),0));
-  //  velocity.add(acceleration);
-  //  location.add(velocity);
-  //}
+  void update(){
+    //acceleration.add(new Vec2(random(-width,width),0));
+    //velocity.add(acceleration);
+    //location.add(velocity);
+  }
   
 
   

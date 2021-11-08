@@ -14,7 +14,7 @@ class Food{
     
     BodyDef bd = new BodyDef();
     bd.type = BodyType.DYNAMIC;
-    location = bd.position.set(box2d.coordPixelsToWorld(mouseX,mouseY));
+    location = bd.position.set(box2d.coordPixelsToWorld(random(width),random(0,height-(300*2))));
     velocity = new Vec2(0,0);
     acceleration = new Vec2(0,0.02);
     lifespan = 255.0;
@@ -76,7 +76,7 @@ class Food{
   }
   
   boolean isExpired(){
-    if(lifespan <= 0.0){
+    if(lifespan <= 10.0){
       return true;
     }
     else{

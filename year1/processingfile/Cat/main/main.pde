@@ -33,7 +33,7 @@ void setup(){
 }
 void draw(){
   wind = new Vec2(random(-10*2,10*2),0);
-  Vec2 move = new Vec2(random(-300*2,300*2),random(15*5,30*5));
+  // winddddddddddddddddddd Vec2 move = new Vec2(random(-300*2,300*2),random(15*5,30*5));
   //println(move);
   box2d.step();
   background(255);
@@ -42,8 +42,9 @@ void draw(){
   wall_R.display();
   
   cat.run();
-  cat.applyForce(move);
-  
+  // windddddddddddddddddddd cat.applyForce(move);
+  f = new Food();
+  foods.add(f);
   Iterator<Food> it = foods.iterator();
   while (it.hasNext()) {
     Food f = it.next();
